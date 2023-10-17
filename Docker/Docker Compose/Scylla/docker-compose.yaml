@@ -27,21 +27,21 @@ services:
         ipv4_address: 192.168.100.100
     command: --smp 1 --memory 1G
 
-  minio:
-    image: minio/minio
-    volumes:
-      - minio_data:/data
-    networks:
-      public:
-    ports:
-      - "9001:9000"
-    environment:
-      MINIO_ACCESS_KEY: minio
-      MINIO_SECRET_KEY: minio123
-    command: server /data
+  # minio:
+  #   image: minio/minio
+  #   volumes:
+  #     - minio_data:/data
+  #   networks:
+  #     public:
+  #   ports:
+  #     - "9001:9000"
+  #   environment:
+  #     MINIO_ACCESS_KEY: minio
+  #     MINIO_SECRET_KEY: minio123
+  #   command: server /data
 
 volumes:
-  minio_data:
+  # minio_data:
   scylla_data:
   scylla_manager_db_data:
 
